@@ -2,6 +2,7 @@
 
 > nanoKONTROL2をいじる
 
+![nanokon](img/nanokon.gif)
 ## Build Setup
 
 ``` bash
