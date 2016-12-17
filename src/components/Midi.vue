@@ -1,9 +1,8 @@
 <template>
   <div class='Midi'>
     {{midiDevices.inputs}}
-    {{out}}
     <div v-for='v in inputs'>
-      <label>{{v.num}}</label>
+      <label>{{('000' + v.num).substr(-4)}}</label>
       <input v-bind:value='v.value' max='127' min='0' type='range' ></input>
     </div>
   </div>
@@ -14,7 +13,6 @@ export default{
   name: 'midi-control',
   data () {
     return {
-      out: '',
       midiDevices: {
         inputs: {}
       },
@@ -30,7 +28,6 @@ export default{
       navigator.requestMIDIAccess().then(requestSuccess, requestError)
     }
     function requestSuccess (data) {
-      console.log('this', this)
       console.log('つながったよ', data)
       data.inputs.forEach(function (device) {
         // デバイス情報を保存
