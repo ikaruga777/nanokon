@@ -3,7 +3,7 @@
     {{midiDevices.inputs}}
     <div v-for='v in inputs'>
       <label>{{('000' + v.num).substr(-4)}}</label>
-      <input v-bind:value='v.value' max='127' min='0' type='range' ></input>
+      <input v-bind:value='v.value' max='127' min='0' type='range' >
     </div>
   </div>
 </template>
